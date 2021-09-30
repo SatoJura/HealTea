@@ -1,24 +1,31 @@
-# README
+# portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ハーブティ情報共有サイト
 
-Things you may want to cover:
 
-* Ruby version
+### サイトテーマ
+このサイトは、ユーザがおすすめのハーブティの美味しい飲み方やハーブに関する情報を共有し、<br>
+日々の生活がよりよいものとなることをテーマに作成します。<br>
+アプリケーション名の"HealTea"とは、Health（健康） + Healing（癒し） + Teaを掛け合わせた造語です。<br>
+健康的なTeaといえば、ハーブティ。心を落ち着かせるTeaといえば、こちらもハーブティです。
 
-* System dependencies
 
-* Configuration
+### テーマを選んだ理由
+健康やストレス解消に適切な飲み物があることを知ってもらい、<br>
+テレワークの増加や自粛生活が続く中での息抜きとして、自宅で美味しくハーブティを楽しんでもらいたい
 
-* Database creation
 
-* Database initialization
+### ターゲットユーザ
+ハーブティをもっと楽しみたいけれど、どのような飲み方があるのだろう<br>
+ハーブティについてもっと知りたい、などハーブティに興味を持つ女性ユーザ
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
+- 「心身の不調を感じる」「就寝前のリラックスタイム」などのふとしたタイミングで、<br>
+どのようなハーブティがあるのかを当サイト使って調べることができる
+- 他人の投稿を通しておすすめの飲み方を知ることができる
+- 自分のおすすめのハーブティを共有することができる
 
-* Deployment instructions
-
-* ...
+### 機能一覧
+https://docs.google.com/spreadsheets/d/16BD9nuSYpJBtgln5GtQcytM5c5XZnudBlKGXln3L8Vw/edit#gid=0
