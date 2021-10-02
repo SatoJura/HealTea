@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  #管理者側
+  scope module: :public do
+    devise_for :admins, controllers:{
+      sessions:        'admin/admins/sessions',
+      passwords:       'admin/admins/passwords',
+    }
+  end
+  namespace :admin do
+  end
 
+  #ユーザ側
   scope module: :public do
     devise_for :users, skip: [:registrations],
                       controllers:{
