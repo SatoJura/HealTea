@@ -5,7 +5,7 @@ Rails.application.routes.draw do
                       controllers:{
       sessions:      'public/users/sessions',
       passwords:     'public/users/passwords',
-      registrations: 'public/users/registrations'
+      # registrations: 'public/users/registrations'
     }
     # sign_upに必要なrouting抜粋。users/edit被り&deviseのuser/edit使用しないため、editは記述しない。
     devise_scope :user do
