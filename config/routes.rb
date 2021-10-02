@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       passwords:       'admin/admins/passwords',
     }
   end
+
   namespace :admin do
+    resources :herbs
   end
 
   #ユーザ側
