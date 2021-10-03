@@ -3,6 +3,7 @@ class Admin::HerbsController < ApplicationController
   end
 
   def new
+    @herb = Herb.new
   end
 
   def create

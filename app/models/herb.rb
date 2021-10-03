@@ -5,7 +5,7 @@ class Herb < ApplicationRecord
   
   attachment :herb_image
   
-  varidates :herb_name, presence: true
-  varidates :department_name, presence: true
-  varidates :caption, presence: true
+  validates :herb_name, presence: true
+  validates :department_name, presence: true
+  validates :caption, presence: true
 end
