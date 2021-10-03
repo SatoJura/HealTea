@@ -8,8 +8,8 @@ class Admin::HerbsController < ApplicationController
 
   def create
     @herb = Herb.new(herb_params)
-    # 送られてきた:tag_nameをsplit(',')で区切り配列にし、deleteでタグの前後にある半角スペースと全角スペースを消す。
-    tag_list = params[:herb][:tag_name].delete(' ').delete('　').split(',')
+    # 送られてきた:tag_listをsplit(',')で区切り配列にし、deleteでタグの前後にある半角スペースと全角スペースを消す。
+    tag_list = params[:herb][:tag_name].delete(" ").delete("　").split(",")
     if @herb.save
       # herb.rbモデルにsave_tags()メソッドを定義。save_tagsメソッドにより、herbとtagを紐づけられる。
       @herb.save_tags(tag_list)
