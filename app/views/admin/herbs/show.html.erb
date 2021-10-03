@@ -1,2 +1,13 @@
 <h1>Admin::Herbs#show</h1>
-<p>Find me in app/views/admin/herbs/show.html.erb</p>
+
+<%= attachment_image_tag @herb, :herb_image, :fill, 100, 100, format: 'jpg' %>
+
+<%= @herb.herb_name %>
+
+<%= @herb.department_name %>
+
+<% @herb.tags.each do |tag| %>
+  <p><%= tag.tag_name %></p>
+<% end %>
+
+<%= @herb.caption %>
