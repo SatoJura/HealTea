@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_105405) do
     t.integer "herb_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["herb_id", "tag_id"], name: "index_tag_relationships_on_herb_id_and_tag_id", unique: true
     t.index ["herb_id"], name: "index_tag_relationships_on_herb_id"
     t.index ["tag_id"], name: "index_tag_relationships_on_tag_id"
   end

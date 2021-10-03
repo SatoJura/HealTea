@@ -1,10 +1,42 @@
-<%= form_with model: @herb, url: admin_herbs_path, local: ture do |f| %>
-<div class="row form-group">
-  <div class="col-md-4">
+<%= form_with model: @herb, url: admin_herbs_path, local: true do |f| %>
+<div class="row form-group mb-3">
+  <div class="col-md-4 text-right">
     <%= f.label(:herb_image, "ハーブ画像") %>
   </div>
   <div class="col-md-8">
     <%= f.attachment_field :herb_image, class:"form-control-file" %>
+  </div>
+</div>
+<div class="row form-group mb-3">
+  <div class="col-md-4 text-right">
+    <%= f.label(:herb_name, "ハーブ名") %>
+  </div>
+  <div class="col-md-4">
+    <%= f.text_field :herb_name, class:"form-control", placeholder:"ローズヒップ" %>
+  </div>
+</div>
+<div class="row form-group mb-3">
+  <div class="col-md-4 text-right">
+    <%= f.label(:department_name, "科名") %>
+  </div>
+  <div class="col-md-3 d-flex align-items-center">
+    <%= f.text_field :department_name, class:"form-control", placeholder:"バラ" %><span>科</span>
+  </div>
+</div>
+<div class="row form-group mb-3">
+  <div class="col-md-4 text-right">
+    <%= f.label(:caption, "簡単な説明") %>
+  </div>
+  <div class="col-md-4">
+    <%= f.text_area :caption, class:"form-control",rows:"4", placeholder:"（例）女性を中心に人気が定着！レモン20倍のビタミンCを含む、フルーティな甘酸っぱさ" %>
+  </div>
+</div>
+<div class="row form-group mb-3">
+  <div class="col-md-4 text-right">
+    <%= f.label(:department_name, "科名") %>
+  </div>
+  <div class="col-md-3 d-flex align-items-center">
+    <%= f.text_field :department_name, class:"form-control", placeholder:"バラ" %><span>科</span>
   </div>
 </div>
 <% end %>
