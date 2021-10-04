@@ -1,5 +1,6 @@
 class Admin::HerbsController < ApplicationController
   def index
+    @herbs = Herb.all
   end
 
   def new
