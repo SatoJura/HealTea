@@ -27,14 +27,26 @@ class Admin::HerbsController < ApplicationController
   end
 
   def edit
+    @herb = Herb.find(params[:id])
+    @tag_list = @herb.tags.pluck(:tag_name).join(',')
   end
 
   def update
+    @herb = Herb.find(params[:id])
+    tag_list = params[:herb][:tag_name].delete(" ").delete("　").split(",")
+    if @herb.update(herb_params)
+      @herb.save_tags(tag_list)
+      flash[:success] = '編集が成功しました'
+      redirect_to admin_herb_path(@herb.id)
+    else
+      flash.now[:alert] = '編集に失敗しました'
+      render 'edit'
+    end
   end
 
   def destroy
   end
-  
+
   private
   def herb_params
     params.require(:herb).permit(:herb_name, :herb_image, :department_name, :caption)

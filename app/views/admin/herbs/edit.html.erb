@@ -1,2 +1,6 @@
-<h1>Admin::Herbs#edit</h1>
-<p>Find me in app/views/admin/herbs/edit.html.erb</p>
+<div class="row justify-content-center mb-3">
+  <h2>Herb編集</h2>
+</div>
+<%= form_with model: @herb, url: admin_herb_path, local: true do |f| %>
+  <%= render :partial => "admin/herbs/herb_form", :locals => {:f => f, :tag_list => @tag_list, :edit_flag => true} %>
+<% end %>

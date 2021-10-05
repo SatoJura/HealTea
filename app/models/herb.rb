@@ -15,10 +15,12 @@ class Herb < ApplicationRecord
     old_tags = current_tags - saveherb_tags
     new_tags = saveherb_tags - current_tags
 
+    #保存するherbにとってタグを外す（deleteする）
     old_tags.each do |old_name|
       self.tags.delete Tag.find_by(tag_name: old_name)
     end
-
+    
+    #自分tagsにpost_tagを加える
     new_tags.each do |new_name|
       post_tag = Tag.find_or_create_by(tag_name: new_name)
       self.tags << post_tag
