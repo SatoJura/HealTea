@@ -45,6 +45,14 @@ class Admin::HerbsController < ApplicationController
   end
 
   def destroy
+    @herb = Herb.find(params[:id])
+    if @herb.destroy
+      flash[:success] = '削除しました'
+      redirect_to admin_herbs_path
+    else
+      flash.now[:alert] = '削除できませんでした'
+      render 'show'
+    end
   end
 
   private
