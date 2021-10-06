@@ -1,6 +1,9 @@
 <div class="row justify-content-center mb-3">
   <h2>Herb新規登録</h2>
 </div>
+
+<%= render 'error_form', herb: @herb %>
+
 <%= form_with model: @herb, url: admin_herbs_path, local: true do |f| %>
 <div class="row form-group mb-3">
   <div class="col-md-4 text-right">

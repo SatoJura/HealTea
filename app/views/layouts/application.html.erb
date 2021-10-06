@@ -57,6 +57,8 @@
     </header>
     <main>
       <div class="container">
+        <p id="success"><%= flash[:success] %></p>
+        <p id="alert"><%= flash[:alert] %></p>
       <%= yield %>
       </div>
     </main>

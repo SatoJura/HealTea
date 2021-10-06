@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+  <div>
+    <% if herb.errors.any? %>
+    <%= herb.errors.count %>件のエラーが発生しました
+    <ul>
+    <% herb.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
