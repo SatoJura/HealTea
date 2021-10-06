@@ -6,7 +6,9 @@ class Herb < ApplicationRecord
 
   attachment :herb_image
 
-  validates :herb_name, uniqueness: true
+  validates :herb_image, presence: true
+  validates :herb_name, presence: true,
+                        uniqueness: true
   validates :department_name, presence: true
   validates :caption, presence: true
 
