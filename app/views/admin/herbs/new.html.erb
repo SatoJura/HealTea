@@ -5,47 +5,5 @@
 <%= render 'error_form', herb: @herb %>
 
 <%= form_with model: @herb, url: admin_herbs_path, local: true do |f| %>
-<div class="row form-group mb-3">
-  <div class="col-md-4 text-right">
-    <%= f.label(:herb_image, "Herb画像") %>
-  </div>
-  <div class="col-md-4">
-    <%= f.attachment_field :herb_image, class:"form-control-file" %>
-  </div>
-</div>
-<div class="row form-group mb-3">
-  <div class="col-md-4 text-right">
-    <%= f.label(:herb_name, "Herb名") %>
-  </div>
-  <div class="col-md-5">
-    <%= f.text_field :herb_name, class:"form-control", placeholder:"ローズヒップ" %>
-  </div>
-</div>
-<div class="row form-group mb-3">
-  <div class="col-md-4 text-right">
-    <%= f.label(:department_name, "科名") %>
-  </div>
-  <div class="col-md-4 d-flex align-items-center">
-    <%= f.text_field :department_name, class:"form-control", placeholder:"バラ" %><span>科</span>
-  </div>
-</div>
-<div class="row form-group mb-3">
-  <div class="col-md-4 text-right">
-    <%= f.label(:caption, "簡単な説明") %>
-  </div>
-  <div class="col-md-6">
-    <%= f.text_area :caption, class:"form-control",rows:"4", placeholder:"（例）女性を中心に人気が定着！レモン20倍のビタミンCを含む、フルーティな甘酸っぱさ" %>
-  </div>
-</div>
-<div class="row form-group mb-3">
-  <div class="col-md-4 text-right">
-    <%= f.label(:tag_name, "効能") %>
-  </div>
-  <div class="col-md-6">
-    <%= f.text_field :tag_name, value: @tag_list, class:"form-control", placeholder:"複数タグをつけるには' , '（カンマ）で区切ってください。"%>
-  </div>
-</div>
-<div class="d-flex justify-content-center">
-  <%= f.submit "新規登録", class:"btn btn-success px-4" %>
-</div>
+  <%= render :partial => "admin/herbs/herb_form", :locals => {:f => f, :tag_list => @tag_list } %>
 <% end %>

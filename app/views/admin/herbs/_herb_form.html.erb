@@ -39,12 +39,12 @@
   </div>
 </div>
 
-  <% if local_assigns[:edit_flag].present? %>
+<% if local_assigns[:edit_flag].present? %>
   <div class="d-flex justify-content-center">
     <%= f.submit "変更", class:"btn btn-success px-4" %>
   </div>
-  <% else %>
+<% else %>
   <div class="d-flex justify-content-center">
     <%= f.submit "新規登録", class:"btn btn-success px-4" %>
   </div>
-  <% end %>
+<% end %>
