@@ -1,6 +1,6 @@
 class Herb < ApplicationRecord
-  has_many :post_comments
-  has_many :likes
+  has_many :post_comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :tag_relationships, dependent: :destroy
   has_many :tags, through: :tag_relationships
 
@@ -27,5 +27,9 @@ class Herb < ApplicationRecord
       post_tag = Tag.find_or_create_by(tag_name: new_name)
       tags << post_tag
     end
+  end
+  
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
   end
 end

@@ -10,34 +10,34 @@
       <h2>お気に入りのHerbを見つけよう　<%= @herbs.count %>件</h2>
     </div>
 
-      <div class="container">
-      <% @herbs.each do |herb| %>
-        <table class="table table-borderless mr-4 mb-4 herb">
-          <tbody>
-            <tr>
-              <td>
-                <%= link_to herb_path(herb.id) do %>
-                  <%= attachment_image_tag herb, :herb_image, size: "300x200", format: 'jpg' %>
-                <% end %>
-                </td>
-            </tr>
-            <tr>
-              <td><%= herb.herb_name %></td>
-            </tr>
-            <tr>
-              <td>効能：
-              <% herb.tags.each do |tag| %>
-                <%= tag.tag_name %>
+    <div>
+    <% @herbs.each do |herb| %>
+      <table class="table table-borderless mr-4 mb-4">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to herb_path(herb.id) do %>
+                <%= attachment_image_tag herb, :herb_image, size: "300x200", format: 'jpg' %>
               <% end %>
               </td>
-            </tr>
-            <tr>
-              <td>いいね数：</td>
-            </tr>
-          </tbody>
-        </table>
-      <% end %>
-      </div>
+          </tr>
+          <tr>
+            <td><%= herb.herb_name %></td>
+          </tr>
+          <tr>
+            <td>効能：
+            <% herb.tags.each do |tag| %>
+              <%= tag.tag_name %>
+            <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>いいね数：</td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+    </div>
 
   </div>
 </div>
