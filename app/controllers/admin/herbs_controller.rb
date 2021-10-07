@@ -56,6 +56,7 @@ class Admin::HerbsController < ApplicationController
   end
 
   private
+
   def herb_params
     params.require(:herb).permit(:herb_name, :herb_image, :department_name, :caption)
   end

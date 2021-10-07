@@ -35,5 +35,4 @@ class Admin::HerbsControllerTest < ActionDispatch::IntegrationTest
     get admin_herbs_destroy_url
     assert_response :success
   end
-
 end

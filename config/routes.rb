@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  #管理者側
+  # 管理者側
   scope module: :public do
-    devise_for :admins, controllers:{
-      sessions:        'admin/admins/sessions',
-      passwords:       'admin/admins/passwords',
+    devise_for :admins, controllers: {
+      sessions: 'admin/admins/sessions',
+      passwords: 'admin/admins/passwords',
     }
   end
 
@@ -11,14 +11,14 @@ Rails.application.routes.draw do
     resources :herbs
   end
 
-  #ユーザ側
+  # ユーザ側
   scope module: :public do
     devise_for :users, skip: [:registrations],
-                      controllers:{
-      sessions:      'public/users/sessions',
-      passwords:     'public/users/passwords',
-      # registrations: 'public/users/registrations'
-    }
+                       controllers: {
+                         sessions: 'public/users/sessions',
+                         passwords: 'public/users/passwords',
+                         # registrations: 'public/users/registrations'
+                       }
     # sign_upに必要なrouting抜粋。users/edit被り&deviseのuser/edit使用しないため、editは記述しない。
     devise_scope :user do
       get 'users/sign_up' => 'users/registrations#new', as: :new_user_registration
@@ -30,9 +30,8 @@ Rails.application.routes.draw do
 
     resource :users, only: [:edit, :update]
     get "users/my_page" => "users#show"
-    
+
     resources :herbs, only: [:index, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
 end

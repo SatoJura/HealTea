@@ -10,5 +10,4 @@ class Public::HerbsControllerTest < ActionDispatch::IntegrationTest
     get public_herbs_show_url
     assert_response :success
   end
-
 end
