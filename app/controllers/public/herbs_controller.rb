@@ -3,5 +3,6 @@ class Public::HerbsController < ApplicationController
   end
 
   def show
+    @herb = Herb.find(params[:id])
   end
 end

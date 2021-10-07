@@ -1,2 +1,28 @@
-<h1>Public::Herbs#show</h1>
-<p>Find me in app/views/public/herbs/show.html.erb</p>
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-4 d-flex align-items-center">
+    <%= attachment_image_tag @herb, :herb_image, size: "300x200", format: 'jpg' %>
+  </div>
+  <div class="col-lg-6">
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <td style="font-size : 30px;"><%= @herb.herb_name %></td>
+        </tr>
+        <tr>
+          <td style="font-size : 20px;"><%= @herb.caption %><td>
+        </tr>
+        <tr>
+          <td>科名 : <%= @herb.department_name %></td>
+        </tr>
+        <tr>
+          <td>効能 : <% @herb.tags.each do |tag| %>
+              <%= tag.tag_name %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
