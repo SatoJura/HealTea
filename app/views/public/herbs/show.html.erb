@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-lg-2">
-    
+    <p>効能から探す</p>
+    <% @tag_list.each do |tag| %>
+      <p><%= link_to tag.tag_name, herbs_path(tag_id: tag.id) %>(<%= tag.herbs.count %>)</p>
+    <% end %>
   </div>
+
   <div class="col-lg-4 d-flex align-items-center">
     <%= attachment_image_tag @herb, :herb_image, size: "300x200", format: 'jpg' %>
   </div>
