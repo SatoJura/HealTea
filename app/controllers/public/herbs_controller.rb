@@ -1,5 +1,7 @@
 class Public::HerbsController < ApplicationController
   def index
+    @herbs = Herb.all
+    @tag_list = Tag.all
   end
 
   def show
