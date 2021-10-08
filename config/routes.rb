@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'post_comments/new'
-    get 'post_comments/create'
-    get 'post_comments/destroy'
-  end
   # 管理者側
   scope module: :public do
     devise_for :admins, controllers: {
@@ -38,6 +33,7 @@ Rails.application.routes.draw do
 
     resources :herbs, only: [:index, :show] do
       resource :likes, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy]
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

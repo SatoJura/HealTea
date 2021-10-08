@@ -14,9 +14,7 @@ class Public::HerbsController < ApplicationController
   def show
     @herb = Herb.find(params[:id])
     @tag_list = Tag.all
-    # if params[:tag_id]
-    #   @tag = Tag.find(params[:tag_id])
-    #   @herbs = @tag.herbs
-    # end
+    @post_comment = PostComment.new
+    @post_comments = @herb.post_comments.all
   end
 end

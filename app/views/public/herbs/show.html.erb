@@ -51,3 +51,30 @@
     </table>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-lg-10 offset-lg-2">
+    <div>
+      <h4>おすすめのハーブティの飲み方や、ハーブに関する素敵な情報をご紹介！</h4>
+    </div>
+    <div>
+      <% @post_comments.each do |post_comment| %>
+      <ul>
+        <li><%= post_comment.user.nickname %></li>
+        <li><%= post_comment.comment %></li>
+      </ul>
+      <% end %>
+    </div>
+
+
+      <h4>あなたがお持ちの素敵な情報をみんなに共有してみませんか？</h4>
+      <p>お気に入りのハーブティーの飲み方。ハーブを使用して作ってみた料理etc...</p>
+
+    <div>
+    <%= form_with(model:[@herb, @post_comment], local: true) do |f| %>
+      <%= f.text_area :comment, class:"form-control rounded p-3", rows:"4", placeholder:"（例）酸味が強いときは蜂蜜を入れるととても飲みやすくなります。", required: "required" %>
+      <%= f.submit "共有する", class:"btn btn-prymary"%>
+    <% end %>
+    </div>
+  </div>
+</div>
