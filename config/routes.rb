@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'post_comments/new'
+    get 'post_comments/create'
+    get 'post_comments/destroy'
+  end
   # 管理者側
   scope module: :public do
     devise_for :admins, controllers: {
