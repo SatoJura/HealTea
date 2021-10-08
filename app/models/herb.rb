@@ -29,6 +29,7 @@ class Herb < ApplicationRecord
     end
   end
   
+  # likesテーブル内にuserが存在する==true/存在しない==false
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
