@@ -74,3 +74,5 @@ gem 'font-awesome-sass', '~> 5.13'
 
 gem "pry-byebug"
 gem "pry-rails"
+
+gem 'dotenv-rails'
