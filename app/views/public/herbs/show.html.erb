@@ -63,6 +63,11 @@
         <li><%= post_comment.user.nickname %></li>
         <li><%= post_comment.comment %></li>
       </ul>
+        <% if post_comment.user_id == current_user.id %>
+          <div>
+            <%= link_to "削除する", herb_post_comment_path(post_comment), method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+          </div>
+        <% end %>
       <% end %>
     </div>
 
