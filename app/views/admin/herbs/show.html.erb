@@ -37,9 +37,9 @@
 </div>
 <div class="row justify-content-center mt-3">
   <div>
-  <%= link_to "編集", edit_admin_herb_path(@herb), class:"btn btn-success px-4 mr-5" %>
+  <%= link_to "編集", edit_admin_herb_path(@herb), class:"btn btn-edit mr-5" %>
   </div>
   <div>
-  <%= link_to "削除", admin_herb_path(@herb), method: :delete, class:"btn btn-danger px-4", "data-confirm" => "本当に削除しますか？" %>
+  <%= link_to "削除", admin_herb_path(@herb), method: :delete, class:"btn btn-delete", "data-confirm" => "本当に削除しますか？" %>
   </div>
 </div>
