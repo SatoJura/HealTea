@@ -60,7 +60,10 @@
     <div>
       <% @post_comments.each do |post_comment| %>
       <ul>
-        <li><%= post_comment.user.nickname %></li>
+        <li>
+        <%= attachment_image_tag post_comment.user, :profile_image, class: "profile-image-to-circle", size:'50x50', format: 'jpg', fallback: 'ornament.jpg' %>
+        <%= post_comment.user.nickname %>
+        </li>
         <li><%= post_comment.comment %></li>
       </ul>
         <% if post_comment.user_id == current_user.id %>

@@ -5,6 +5,7 @@ class Herb < ApplicationRecord
   has_many :tags, through: :tag_relationships
 
   attachment :herb_image
+  attachment :profile_image
 
   validates :herb_image, presence: true
   validates :herb_name, presence: true,
@@ -28,7 +29,7 @@ class Herb < ApplicationRecord
       tags << post_tag
     end
   end
-  
+
   # likesテーブル内にuserが存在する==true/存在しない==false
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
