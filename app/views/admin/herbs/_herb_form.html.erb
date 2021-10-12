@@ -41,10 +41,10 @@
 
 <% if local_assigns[:edit_flag].present? %>
   <div class="d-flex justify-content-center">
-    <%= f.submit "変更", class:"btn btn-success px-4" %>
+    <%= f.submit "変更", class:"btn btn-edit px-4" %>
   </div>
 <% else %>
   <div class="d-flex justify-content-center">
-    <%= f.submit "新規登録", class:"btn btn-success px-4" %>
+    <%= f.submit "新規登録", class:"btn btn-yellow px-4" %>
   </div>
 <% end %>
