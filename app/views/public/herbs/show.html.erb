@@ -1,88 +1,99 @@
-<div class="row">
-  <div class="col-lg-2">
-    <p>効能から探す</p>
-    <% @tag_list.each do |tag| %>
-      <p><%= link_to tag.tag_name, herbs_path(tag_id: tag.id) %>(<%= tag.herbs.count %>)</p>
-    <% end %>
-  </div>
-
-  <div class="col-lg-4 d-flex align-items-center">
-    <%= attachment_image_tag @herb, :herb_image, size: "300x200", format: 'jpg' %>
-  </div>
-  <div class="col-lg-6">
-    <table class="table table-borderless">
-      <tbody>
-        <tr>
-          <td class="h3"><%= @herb.herb_name %></td>
-        </tr>
-        <tr>
-          <td class="lead"><%= @herb.caption %><td>
-        </tr>
-        <tr>
-          <td>科名 : <%= @herb.department_name %></td>
-        </tr>
-        <tr>
-          <td>効能 : <% @herb.tags.each do |tag| %>
-              <%= tag.tag_name %>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <!--liked_by? == likesテーブル内にuserが存在する（いいね済み）か否か、、、　if存在したらいいねを取り消す（delete）-->
-            <% if @herb.liked_by?(current_user) %>
-            <p>
-              <%= link_to herb_likes_path(@herb), method: :delete do %>
-              ♥
-              <% end %>
-              いいね数：<%= @herb.likes.count %>
-            </p>
-            <% else %>
-            <p>
-              <%= link_to herb_likes_path(@herb), method: :post do %>
-              ♡
-              <% end %>
-              いいね数：<%= @herb.likes.count %>
-            </p>
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-10 offset-lg-2">
-    <div>
-      <h4>おすすめのハーブティの飲み方や、ハーブに関する素敵な情報をご紹介！</h4>
-    </div>
-    <div>
-      <% @post_comments.each do |post_comment| %>
-      <ul>
-        <li>
-        <%= attachment_image_tag post_comment.user, :profile_image, class: "profile-image-to-circle", size:'50x50', format: 'jpg', fallback: 'ornament.jpg' %>
-        <%= post_comment.user.nickname %>
-        </li>
-        <li><%= post_comment.comment %></li>
-      </ul>
-        <% if post_comment.user_id == current_user.id %>
-          <div>
-            <%= link_to "削除する", herb_post_comment_path(post_comment), method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
-          </div>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+      <p>効能から探す</p>
+      <% @tag_list.each do |tag| %>
+        <p><%= link_to tag.tag_name, herbs_path(tag_id: tag.id) %>(<%= tag.herbs.count %>)</p>
       <% end %>
     </div>
 
-
-      <h4>あなたがお持ちの素敵な情報をみんなに共有してみませんか？</h4>
-      <p>お気に入りのハーブティーの飲み方。ハーブを使用して作ってみた料理etc...</p>
-
+    <div class="card-big-one col-lg-10 d-flex align-items-center">
     <div>
-    <%= form_with(model:[@herb, @post_comment], local: true) do |f| %>
-      <%= f.text_area :comment, class:"form-control rounded p-3", rows:"4", placeholder:"（例）酸味が強いときは蜂蜜を入れるととても飲みやすくなります。", required: "required" %>
-      <%= f.submit "共有する", class:"btn btn-prymary"%>
-    <% end %>
+      <%= attachment_image_tag @herb, :herb_image, size: "300x200", format: 'jpg' %>
+    </div>
+    <div class="col-lg-8">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td class="h3"><%= @herb.herb_name %></td>
+          </tr>
+          <tr>
+            <td class="lead"><%= @herb.caption %><td>
+          </tr>
+          <tr>
+            <td>科名 : <%= @herb.department_name %>科</td>
+          </tr>
+          <tr>
+            <td>効能 : <% @herb.tags.each do |tag| %>
+                <%= tag.tag_name %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!--liked_by? == likesテーブル内にuserが存在する（いいね済み）か否か、、、　if存在したらいいねを取り消す（delete）-->
+              <% if @herb.liked_by?(current_user) %>
+              <p>
+                いいね数：<%= @herb.likes.count %>
+                <%= link_to herb_likes_path(@herb), method: :delete do %>
+                ♥
+                <% end %>
+              </p>
+              <% else %>
+              <p>
+                いいね数：<%= @herb.likes.count %>
+                <%= link_to herb_likes_path(@herb), method: :post do %>
+                ♡
+                <% end %>
+              </p>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-10 offset-lg-2">
+      <div>
+        <h4>おすすめのハーブティの飲み方や、ハーブに関する素敵な情報をご紹介！</h4>
+      </div>
+      <div>
+        <% @post_comments.each do |post_comment| %>
+        <ul>
+          <li>
+          <%= attachment_image_tag post_comment.user, :profile_image, class: "profile-image-to-circle", size:'50x50', format: 'jpg', fallback: 'ornament.jpg' %>
+          <%= post_comment.user.nickname %>
+          </li>
+          <li><%= post_comment.comment %></li>
+        </ul>
+          <% if post_comment.user_id == current_user.id %>
+            <div class="d-flex justify-content-end">
+              <%= link_to "上記の自分のコメントを削除する", herb_post_comment_path(post_comment), method: :delete, class:"btn btn-delete", "data-confirm" => "本当に削除しますか？" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-10 offset-lg-2 herb-comment">
+      <div class="mt-3">
+        <h4>あなたがお持ちの素敵な情報をみんなに共有してみませんか？</h4>
+        <p>お気に入りのハーブティーの飲み方。ハーブを使用して作ってみた料理etc...</p>
+      </div>
+
+      <div>
+      <%= form_with(model:[@herb, @post_comment], local: true) do |f| %>
+        <%= f.text_area :comment, class:"form-control rounded p-3", rows:"4", placeholder:"（例）酸味が強いときは蜂蜜を入れるととても飲みやすくなります。", required: "required" %>
+        <div class="d-flex justify-content-end">
+          <%= f.submit "共有する", class:"btn btn-save"%>
+        </div>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>

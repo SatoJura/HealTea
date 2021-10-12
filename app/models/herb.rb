@@ -5,7 +5,6 @@ class Herb < ApplicationRecord
   has_many :tags, through: :tag_relationships
 
   attachment :herb_image
-  attachment :profile_image
 
   validates :herb_image, presence: true
   validates :herb_name, presence: true,
