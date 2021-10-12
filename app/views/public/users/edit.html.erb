@@ -1,2 +1,31 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container">
+  <div class="row d-flex align-items-center text-center">
+    <div class="col-lg-2 my-3">
+      <h3>変更</h3>
+    </div>
+
+    <%= form_with model: @user, url: users_path, local:true do |f| %>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <%= f.label(:profile_image, "画像") %>
+        <%= f.attachment_field :profile_image, class:"form-control-file", placeholder: "プロフィール画像" %>
+      </div>
+      <%#= attachment_image_tag current_user, :profile_image_id, class: "profile-image-to-circle", size:'300x300', format: 'jpg', fallback: 'ornament.jpg' %>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label(:nickname, "ニックネーム（2文字以上10文字以下）") %>
+        <%= f.text_field :nickname, class:"form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label(:email, "メールアドレス") %>
+        <%= f.text_field :email, class:"form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "保存", class:"btn btn-save" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
