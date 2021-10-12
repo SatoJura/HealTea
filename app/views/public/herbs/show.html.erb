@@ -89,8 +89,8 @@
       <div>
       <%= form_with(model:[@herb, @post_comment], local: true) do |f| %>
         <%= f.text_area :comment, class:"form-control rounded p-3", rows:"4", placeholder:"（例）酸味が強いときは蜂蜜を入れるととても飲みやすくなります。", required: "required" %>
-        <div class="d-flex justify-content-end">
-          <%= f.submit "共有する", class:"btn btn-save"%>
+        <div class="d-flex justify-content-end mt-2">
+          <%= f.submit "共有する", class:"btn btn-yellow"%>
         </div>
       <% end %>
       </div>
