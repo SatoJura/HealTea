@@ -92,5 +92,26 @@ nav {
 
 // ボタン
 .btn-edit {
-  
+
 }
+
+.btn-save {
+
+}
+
+// public　herb詳細ページ
+.all-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 230px;
+  height: 330px;
+  transform: translateY(-5px);
+  box-shadow: 0 7px 34px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  transition: all .5s;
+}
+
+

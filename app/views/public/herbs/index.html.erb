@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
   <div class="col-lg-2">
     <p>効能から探す</p>
@@ -5,39 +6,43 @@
       <p><%= link_to tag.tag_name, herbs_path(tag_id: tag.id) %>(<%= tag.herbs.count %>)</p>
     <% end %>
   </div>
-  <div class="col-lg-10">
+  <div class="col-lg-9 offset-lg-1">
     <div class="mb-5">
-      <h2>お気に入りのHerbを見つけよう　<%= @herbs.count %>件</h2>
+      <h2>お気に入りのHerbを見つけよう</h2>
+      <p>現在のハーブ登録数：<%= @herbs.count %>件</p>
     </div>
 
-    <div>
-    <% @herbs.each do |herb| %>
-      <table class="table table-borderless mr-4 mb-4">
-        <tbody>
-          <tr>
-            <td>
-              <%= link_to herb_path(herb.id) do %>
-                <%= attachment_image_tag herb, :herb_image, size: "300x200", format: 'jpg' %>
+    <div class="all-card">
+      <% @herbs.each do |herb| %>
+      <div class="card mb-2 mx-3">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to herb_path(herb.id) do %>
+                  <%= attachment_image_tag herb, :herb_image, size: "200x130", format: 'jpg' %>
+                <% end %>
+                </td>
+            </tr>
+            <tr>
+              <td><%= herb.herb_name %></td>
+            </tr>
+            <tr>
+              <td align="justify">効能：
+              <% herb.tags.each do |tag| %>
+                <%= tag.tag_name %>
               <% end %>
               </td>
-          </tr>
-          <tr>
-            <td><%= herb.herb_name %></td>
-          </tr>
-          <tr>
-            <td>効能：
-            <% herb.tags.each do |tag| %>
-              <%= tag.tag_name %>
-            <% end %>
-            </td>
-          </tr>
-          <tr>
-            <td>いいね数：<%= herb.likes.count %></td>
-          </tr>
-        </tbody>
-      </table>
-    <% end %>
+            </tr>
+            <tr>
+              <td>いいね数：<%= herb.likes.count %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <% end %>
     </div>
 
   </div>
+</div>
 </div>
