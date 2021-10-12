@@ -38,7 +38,7 @@ body {
   height: 100%;
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #e6e6e6;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.2em;/* 文字間隔調整 */
 }
 header {
   padding: 30px 4% 10px;
@@ -82,4 +82,16 @@ nav {
   font-weight: normal;
   color: #121211;
   position: absolute;
+}
+
+// マイページ
+.profile-image-to-circle {
+  border-radius: 50%;
+  background-position: center center;
+}
+
+
+// ボタン
+.btn-edit {
+  
 }
