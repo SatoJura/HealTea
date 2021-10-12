@@ -1,36 +1,39 @@
-<div class="row mb-3">
-  <div class="col-md-12 mx-auto d-flex justify-content-center">
-    <div class="col-md-4 offset-md-4 ml-auto text-center">
-      <h2>Herb一覧</h2>
-    </div>
-    <div class="col-md-4 text-right">
-    <%= link_to "新規登録", new_admin_herb_path, class:"btn btn-success px-4" %>
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-12 mx-auto d-flex justify-content-center">
+      <div class="col-md-4 offset-md-4 ml-auto text-center">
+        <h2>Herb一覧</h2>
+        <p>Herb名から詳細へ</p>
+      </div>
+      <div class="col-md-4 text-right">
+      <%= link_to "新規登録", new_admin_herb_path, class:"btn btn-yellow" %>
+      </div>
     </div>
   </div>
-</div>
-<div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>登録日時</th>
-        <th>Herb名</th>
-        <th>科名</th>
-        <th>効能タグ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @herbs.each do |herb| %>
-      <tr>
-        <td><%= herb.created_at %></td>
-        <td><%= link_to herb.herb_name, admin_herb_path(herb.id) %></td>
-        <td><%= herb.department_name %>科</td>
-        <td>
-          <% herb.tags.each do |tag| %>
-            <%= tag.tag_name %>
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>登録日時</th>
+          <th>Herb名</th>
+          <th>科名</th>
+          <th>効能タグ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @herbs.each do |herb| %>
+        <tr>
+          <td><%= herb.created_at %></td>
+          <td><%= link_to herb.herb_name, admin_herb_path(herb.id) %></td>
+          <td><%= herb.department_name %>科</td>
+          <td>
+            <% herb.tags.each do |tag| %>
+              <%= tag.tag_name %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
