@@ -11,7 +11,7 @@ class Public::LikesController < ApplicationController
     herb = Herb.find(params[:herb_id])
     like = current_user.likes.find_by(herb_id: herb.id)
     like.destroy
-    flash[:success] = "いいね！を取り消しました"
+    flash[:alert] = "いいね！を取り消しました"
     redirect_to herb_path(herb.id)
   end
 end

@@ -29,13 +29,6 @@ body {
   letter-spacing: 0.2em;/* 文字間隔調整 */
 }
 
-#success {
-  color: green;
-}
-#alert {
-  color: red;
-}
-
 header {
   padding: 30px 4% 10px;
   width: 100%;
@@ -146,4 +139,15 @@ h4 {
   height: 70vh;
   background: url('nigera.jpg') top center / cover no-repeat;
   opacity: 0.7;
+}
+
+// flash msg
+#success {
+  color: green;
+}
+#alert {
+  color: red;
+}
+#notice {
+  color: #bbb84e;
 }
