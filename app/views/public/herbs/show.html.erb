@@ -71,7 +71,7 @@
         </ul>
           <% if post_comment.user_id == current_user.id %>
             <div class="d-flex justify-content-end">
-              <%= link_to "上記の自分のコメントを削除する", herb_post_comment_path(post_comment), method: :delete, class:"btn btn-delete", "data-confirm" => "本当に削除しますか？" %>
+              <%= link_to "上記の自分のコメントを削除する", herb_post_comment_path(post_comment.herb, post_comment), method: :delete, class:"btn btn-delete", "data-confirm" => "本当に削除しますか？" %>
             </div>
           <% end %>
         <% end %>

@@ -1,4 +1,5 @@
 class Admin::HerbsController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @herbs = Herb.all
   end

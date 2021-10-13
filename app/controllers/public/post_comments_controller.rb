@@ -9,7 +9,7 @@ class Public::PostCommentsController < ApplicationController
   end
 
   def destroy
-    PostComment.find_by(id: params[:id]).destroy
+    PostComment.find(params[:id]).destroy
     flash[:success] = 'コメントを削除しました'
     redirect_to herb_path(params[:herb_id])
   end
