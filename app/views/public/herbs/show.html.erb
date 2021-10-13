@@ -1,10 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-2">
-      <p>効能から探す</p>
-      <% @tag_list.each do |tag| %>
-        <p><%= link_to tag.tag_name, herbs_path(tag_id: tag.id) %>(<%= tag.herbs.count %>)</p>
-      <% end %>
+      <%= render 'public/herbs/efficacy', tag_list: @tag_list %>
     </div>
 
     <div class="card-big-one col-lg-10 d-flex align-items-center">
