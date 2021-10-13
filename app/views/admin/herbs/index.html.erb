@@ -23,7 +23,7 @@
       <tbody>
         <% @herbs.each do |herb| %>
         <tr>
-          <td><%= herb.created_at %></td>
+          <td><%= l herb.created_at %></td>
           <td><%= link_to herb.herb_name, admin_herb_path(herb.id) %></td>
           <td><%= herb.department_name %>科</td>
           <td>
