@@ -58,6 +58,8 @@
         <h4>おすすめのハーブティの飲み方や、ハーブに関する素敵な情報をご紹介！</h4>
       </div>
       <div>
+      <% if @post_comments.present? %>
+      
         <% @post_comments.each do |post_comment| %>
         <ul>
           <li>
@@ -72,6 +74,10 @@
             </div>
           <% end %>
         <% end %>
+        
+      <% else %>
+        <p>共有された情報はありません</p>
+      <% end %>
       </div>
     </div>
   </div>

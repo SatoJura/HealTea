@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     # sign_upに必要なrouting抜粋。users/edit被り&deviseのuser/edit使用しないため、editは記述しない。
     devise_scope :user do
       get 'users/sign_up' => 'users/registrations#new', as: :new_user_registration
-      post 'users' => 'users/registrations#create', as: :user_registration
+      post 'users/sign_up' => 'users/registrations#create', as: :user_registration
     end
 
     root to: 'homes#top'
