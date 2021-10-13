@@ -17,9 +17,8 @@ Rails.application.routes.draw do
                        controllers: {
                          sessions: 'public/users/sessions',
                          passwords: 'public/users/passwords',
-                         # registrations: 'public/users/registrations'
                        }
-    # sign_upに必要なrouting抜粋。users/edit被り&deviseのuser/edit使用しないため、editは記述しない。
+    # sign_upに必要なrouting抜粋。users/editが被っている&deviseのuser/edit使用しないため、editは記述しない。
     devise_scope :user do
       get 'users/sign_up' => 'users/registrations#new', as: :new_user_registration
       post 'users/sign_up' => 'users/registrations#create', as: :user_registration
