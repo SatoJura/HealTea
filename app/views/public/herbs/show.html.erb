@@ -36,14 +36,14 @@
               <p>
                 いいね数：<%= @herb.likes.count %>
                 <%= link_to herb_likes_path(@herb), method: :delete do %>
-                ♥
+                <i class="fas fa-heart like fa-2x"></i>
                 <% end %>
               </p>
               <% else %>
               <p>
                 いいね数：<%= @herb.likes.count %>
                 <%= link_to herb_likes_path(@herb), method: :post do %>
-                ♡
+                <i class="far fa-heart un-like fa-2x"></i>
                 <% end %>
               </p>
               <% end %>
