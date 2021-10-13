@@ -76,3 +76,5 @@ gem "pry-byebug"
 gem "pry-rails"
 
 gem 'dotenv-rails'
+
+gem 'rails-i18n'
