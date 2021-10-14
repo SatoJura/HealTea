@@ -12,8 +12,14 @@ class Admin::HerbsController < ApplicationController
     @herb = Herb.new(herb_params)
     # 送られてきたtag_nameをsplit(',')で区切って、tag_listメソッドに定義。
     tag_list = params[:herb][:tag_ids].delete(" ").delete("　").split(",")
+    if tag_list.empty?
+      flash.now[:alert] = '新規登録に失敗しました'
+      @herb.errors.add(:tag, "を入力してください")
+      render 'new'
+      return
+    end
     if @herb.save
-      # herbモデルにsave_tags()メソッドを定義している。保存された@herbに紐づけられたtagをsaveする。
+      # Herbモデルにsave_tags()メソッドを定義。
       @herb.save_tags(tag_list)
       flash[:success] = '新規登録が成功しました'
       redirect_to admin_herb_path(@herb.id)
