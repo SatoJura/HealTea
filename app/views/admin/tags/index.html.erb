@@ -1,1 +1,28 @@
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 text-center mx-auto">
+      <h2 class="mb-3">効能一覧</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="1"></th>
+            <th>効能</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tags.each do |tag| %>
+          <tr>
+            <td><%= tag.id %></td>
+            <td><%= tag.tag_name%></td>
+            <td>
+              <%= link_to "編集", edit_admin_tag_path(tag), class:"btn btn-edit px-4" %>
+              <%= link_to "削除", admin_tag_path(tag), method: :delete, class:"btn btn-delete px-4", "data-confirm" => "本当に削除しますか？" %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
