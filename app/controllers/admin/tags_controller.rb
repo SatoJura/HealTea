@@ -11,7 +11,7 @@ class Admin::TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     if @tag.update(tag_params)
       flash[:success]="編集に成功しました"
-      redirect_to admin_tags_path(@tag)
+      redirect_to admin_tags_path
     else
       flash.now[:alert]="編集に失敗しました"
       render "edit"
@@ -19,6 +19,15 @@ class Admin::TagsController < ApplicationController
   end
 
   def destroy
+    @tag = Tag.find(params[:id])
+    if @tag.destroy
+      flash[:success]="削除しました"
+      redirect_to admin_tags_path
+    else
+      @tags = Tag.all
+      flash.now[:alert]="削除できませんでした"
+      render "index"
+    end
   end
 
   private

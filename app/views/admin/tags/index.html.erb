@@ -5,7 +5,6 @@
       <table class="table">
         <thead>
           <tr>
-            <th colspan="1"></th>
             <th>効能</th>
             <th colspan="4"></th>
           </tr>
@@ -13,7 +12,6 @@
         <tbody>
           <% @tags.each do |tag| %>
           <tr>
-            <td><%= tag.id %></td>
             <td><%= tag.tag_name%></td>
             <td class="d-flex justify-content-around">
               <%= link_to "編集する", edit_admin_tag_path(tag), class:"btn btn-edit px-4" %>
