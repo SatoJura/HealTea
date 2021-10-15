@@ -1,45 +1,47 @@
-<div class="row justify-content-center mb-5">
-  <h2>Herb詳細</h2>
-</div>
-<div class="row">
-  <div class="row mx-auto mb-3">
-    <%= attachment_image_tag @herb, :herb_image, size: "400x300", format: 'jpg' %>
+<div class="container">
+  <div class="row justify-content-center mb-5">
+    <h2>Herb詳細</h2>
   </div>
-
-  <div class="col-lg-6">
-    <table class="table table-borderless">
-      <tbody>
-        <tr>
-          <th class="col-3">Herb名</th>
-          <td><%= @herb.herb_name %></td>
-        </tr>
-        <tr>
-          <th>科名</th>
-          <td><%= @herb.department_name %></td>
-        </tr>
-        <tr>
-          <th>簡単な説明</th>
-          <td>
-          <%= @herb.caption %>
-          </td>
-        </tr>
-        <tr>
-          <th>効能</th>
-          <td>
-            <% @herb.tags.each do |tag| %>
-              <p><%= tag.tag_name %></p>
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="row mx-auto mb-3">
+      <%= attachment_image_tag @herb, :herb_image, size: "400x300", format: 'jpg' %>
+    </div>
+  
+    <div class="col-lg-6">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th class="col-3">Herb名</th>
+            <td><%= @herb.herb_name %></td>
+          </tr>
+          <tr>
+            <th>科名</th>
+            <td><%= @herb.department_name %></td>
+          </tr>
+          <tr>
+            <th>簡単な説明</th>
+            <td>
+            <%= @herb.caption %>
+            </td>
+          </tr>
+          <tr>
+            <th>効能</th>
+            <td>
+              <% @herb.tags.each do |tag| %>
+                <p><%= tag.tag_name %></p>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-<div class="row justify-content-center mt-3">
-  <div>
-  <%= link_to "編集", edit_admin_herb_path(@herb), class:"btn btn-edit mr-5" %>
-  </div>
-  <div>
-  <%= link_to "削除", admin_herb_path(@herb), method: :delete, class:"btn btn-delete", "data-confirm" => "本当に削除しますか？" %>
+  <div class="row justify-content-center mt-3">
+    <div>
+    <%= link_to "編集", edit_admin_herb_path(@herb), class:"btn btn-edit mr-5" %>
+    </div>
+    <div>
+    <%= link_to "削除", admin_herb_path(@herb), method: :delete, class:"btn btn-delete", "data-confirm" => "本当に削除しますか？" %>
+    </div>
   </div>
 </div>
