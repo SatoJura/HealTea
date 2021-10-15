@@ -38,6 +38,9 @@
             <%= link_to "Herb", admin_herbs_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
+            <%= link_to "Efficacy", admin_tags_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Logout", destroy_admin_session_path, method: :delete, class:"nav-link" %>
           </li>
           <% else %>
