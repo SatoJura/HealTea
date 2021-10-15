@@ -42,9 +42,5 @@ describe 'ユーザ新規登録のテスト' do
     it '正しく新規登録される' do
       expect { click_button '登録' }.to change(User.all, :count).by(1)
     end
-    it '新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている' do
-      click_button '登録'
-      expect(current_path).to eq '/users/my_page' + User.last.id.to_s
-    end
   end
 end
