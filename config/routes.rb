@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :herbs
+    resources :tags, only: [:index, :edit, :update, :destroy]
   end
 
   # ユーザ側
