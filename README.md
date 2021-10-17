@@ -42,7 +42,10 @@
 * ログイン・ログアウト（devise）
 * CSSフレームワーク（bootstrap）
 * コードチェック（rubocop）
+* テスト(RSpec)
 * 環境変数（dotenv-rails）
+* Nginx
+* AWS(EC2,RDS)
 
 ### バージョン
 Rails 5.2.6  
