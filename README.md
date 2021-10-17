@@ -4,6 +4,8 @@
 ##### ユーザー　ハーブ一覧画面
 <img width="939" alt="user herb index" src="https://user-images.githubusercontent.com/86064337/137626850-d87d1bc4-fc4d-4ebf-a240-e9c3410b92bf.png">
 
+##### ユーザー　ハーブ詳細画面
+<img width="941" alt="user herb show" src="https://user-images.githubusercontent.com/86064337/137627068-1d4507c3-b5ac-485f-a7bd-8c59bb704676.png">
 
 ## URL
 [HealTea](13.115.216.22)
