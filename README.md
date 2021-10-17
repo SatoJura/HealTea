@@ -1,6 +1,10 @@
 ## アプリケーション名
 「HealTea」
 
+##### ユーザー　ハーブ一覧画面
+<img width="939" alt="user herb index" src="https://user-images.githubusercontent.com/86064337/137626850-d87d1bc4-fc4d-4ebf-a240-e9c3410b92bf.png">
+
+
 ## URL
 [HealTea](13.115.216.22)
 
