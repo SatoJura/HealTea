@@ -1,14 +1,10 @@
-## アプリケーション名
-「HealTea」
+# HealTea
 
 ##### ユーザー　ハーブ一覧画面
 <img width="939" alt="user herb index" src="https://user-images.githubusercontent.com/86064337/137626850-d87d1bc4-fc4d-4ebf-a240-e9c3410b92bf.png">
 
 ##### ユーザー　ハーブ詳細画面
 <img width="941" alt="user herb show" src="https://user-images.githubusercontent.com/86064337/137627068-1d4507c3-b5ac-485f-a7bd-8c59bb704676.png">
-
-## URL
-[HealTea](13.115.216.22)
 
 ## 概要
 ユーザーがおすすめするハーブティの美味しい飲み方や、ハーブに関する情報を共有し合うアプリケーション
@@ -27,7 +23,7 @@
 
 ### こだわり
 * ユーザーと管理者がアクセス可能なページを分けた。
-* 非ログイン時にはハーブ一覧ページを見ることができるが、ログインしないとコメントやハーブ詳細ページは見ることができないようにした。
+* 非ログイン時にはハーブ一覧ページを見ることができるが、ログインしないとコメントやいいね、ハーブ詳細ページは見ることができないようにした。
 * 夜や癒されたいときに見ることを想定し、サイトの色味を柔らかいイメージにした。
 
 ## ER図
@@ -46,6 +42,9 @@
 * 環境変数（dotenv-rails）
 * Nginx
 * AWS(EC2,RDS)
+
+### 使用した言語
+Ruby,Ruby on Rails,HTML,CSS
 
 ### バージョン
 Rails 5.2.6  
