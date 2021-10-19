@@ -1,5 +1,8 @@
 # HealTea
 
+### URL
+[Healtea](http://13.115.216.22)
+
 ##### ユーザー　ハーブ一覧画面
 <img width="939" alt="user herb index" src="https://user-images.githubusercontent.com/86064337/137626850-d87d1bc4-fc4d-4ebf-a240-e9c3410b92bf.png">
 
@@ -20,10 +23,6 @@
 * ハーブ詳細ページから、自分のおすすめのハーブティの飲み方やハーブの使用方法を共有することができる。
 #### 管理者側
 * ハーブを登録することができる。その際、効能のタグ付けは必須で登録できる。
-
-### URL
-[Healtea](http://13.115.216.22)
-
 
 ### こだわり
 * ユーザーと管理者がアクセス可能なページを分けた。
@@ -48,7 +47,10 @@
 * AWS(EC2,RDS)
 
 ### 使用した言語
-Ruby,Ruby on Rails,HTML,CSS
+Ruby,HTML,CSS
+
+### 使用したWebアプリケーション
+Ruby on Rails
 
 ### バージョン
 Rails 5.2.6  
