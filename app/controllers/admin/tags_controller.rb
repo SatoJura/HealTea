@@ -1,6 +1,6 @@
 class Admin::TagsController < ApplicationController
   def index
-    @tags = Tag.all
+    @tags = Tag.page(params[:page]).per(6)
   end
 
   def edit

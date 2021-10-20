@@ -165,3 +165,12 @@ h4 {
   color: #f59c5b;
 }
 
+// ページネーションactive以外の文字色
+.pagination>li>a {          
+  color: #696969;
+}
+// ページネーションactive部分の色
+.page-item.active .page-link {
+  background-color: #c3998a;
+  border-color: #c3998a;
+}
