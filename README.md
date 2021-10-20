@@ -45,7 +45,7 @@
 * テスト(RSpec)
 * 環境変数（dotenv-rails）
 * Nginx
-* AWS(EC2,RDS)
+* AWS(EC2,RDS,GitHub Actions)
 
 ### 使用した言語
 Ruby,HTML,CSS
