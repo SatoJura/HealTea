@@ -38,6 +38,7 @@
 * 画像アップロード（refile-mini_magick）
 * タグ付け
 * いいね機能
+* ページネーション（kaminari）
 * ログイン・ログアウト（devise）
 * CSSフレームワーク（bootstrap）
 * コードチェック（rubocop）
@@ -53,5 +54,5 @@ Ruby,HTML,CSS
 Ruby on Rails
 
 ### バージョン
-Rails 5.2.6  
-Ruby 2.6.3  
+Rails 5.2.6
+Ruby 2.6.3
