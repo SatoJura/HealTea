@@ -4,7 +4,7 @@ class Public::HerbsController < ApplicationController
     # サイドの効能タグから絞り込み
     if params[:tag_id]
       @tag_relationship = TagRelationship.where(tag_id: params[:tag_id])
-      @herbs = @tag_relationship.pluck(:herb_id).map { |x| Herb.find(x) } # 1つのタグに紐づくherb_id（複数）をmapで繰り返し処理し、取得
+      @herbs = @tag_relationship.pluck(:herb_id).map { |herb_id| Herb.find(herb_id) } # 1つのタグに紐づくherb_id（複数）をmapで繰り返し処理し、取得
       @tag_list = Tag.all
     else
       @herbs = Herb.all
