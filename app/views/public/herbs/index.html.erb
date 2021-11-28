@@ -3,13 +3,13 @@
     <div class="col-lg-2">
       <%= render 'public/herbs/efficacy', tag_list: @tag_list %>
     </div>
-    
+
     <div class="col-lg-9 offset-lg-1">
-      <div class="mb-5">
+      <div class="mb-3">
         <h2>お気に入りのHerbを見つけよう</h2>
         <p>現在のハーブ登録数：<%= @herbs.count %>件</p>
       </div>
-  
+
       <div class="all-card">
         <% @herbs.each do |herb| %>
         <div class="card mb-2 mx-3">
@@ -26,7 +26,7 @@
                 <td><%= herb.herb_name %></td>
               </tr>
               <tr>
-                <td align="justify">効能：
+                <td>効能：
                 <% herb.tags.each do |tag| %>
                   <%= tag.tag_name %>
                 <% end %>
@@ -40,7 +40,7 @@
         </div>
         <% end %>
       </div>
-    
+
     </div>
   </div>
 </div>
