@@ -43,7 +43,7 @@ h1 {
 }
 a {
   text-decoration: none;
-  color: #4b4b4b;
+  color: #121211;
 }
 nav {
   margin: 0 0 0 auto;
@@ -59,7 +59,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   background-image: image-url('chamomile.jpg');
   background-position: center;
   background-size: cover;
@@ -187,4 +187,5 @@ footer {
 .copyright {
   font-size: 16px;
   text-align: center;
+  color: rgba(0, 0, 0, 0.5);
 }
