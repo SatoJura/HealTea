@@ -26,9 +26,9 @@
                 <td><%= herb.herb_name %></td>
               </tr>
               <tr>
-                <td>効能：
+                <td>
                 <% herb.tags.each do |tag| %>
-                  <%= tag.tag_name %>
+                  ・<%= tag.tag_name %><br>
                 <% end %>
                 </td>
               </tr>

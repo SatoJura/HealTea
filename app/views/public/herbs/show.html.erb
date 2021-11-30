@@ -61,7 +61,7 @@
       <% if @post_comments.present? %>
       
         <% @post_comments.each do |post_comment| %>
-        <ul>
+        <ul class="comments">
           <li>
           <%= attachment_image_tag post_comment.user, :profile_image, class: "profile-image-to-circle", size:'50x50', format: 'jpg', fallback: 'ornament.jpg' %>
           <%= post_comment.user.nickname %>
