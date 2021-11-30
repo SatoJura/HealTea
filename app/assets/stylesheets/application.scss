@@ -16,6 +16,7 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 * {
   box-sizing: border-box;
@@ -24,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", Arial, sans-serif;
   background-color: #e6e6e6;
   letter-spacing: 0.2em;/* 文字間隔調整 */
 }
@@ -68,6 +69,7 @@ nav {
   margin: 0;
   font-size: 30px;
   font-weight: normal;
+  font-family: 'Caveat', cursive;
   color: #121211;
   position: absolute;
 }
