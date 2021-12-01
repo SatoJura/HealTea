@@ -7,8 +7,8 @@
       <%= render "public/users/shared/error_messages", resource: resource %>
 
       <div class="field mb-3">
-        <%= f.label :nickname, "ニックネーム" %><br />
-        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form-control", placeholder: "2文字以上、10文字以下"  %>
+        <%= f.label :nickname, "ニックネーム(2文字〜10文字以内)" %><br />
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form-control", placeholder: "ハーブちゃん"  %>
       </div>
 
       <div class="field mb-3">
