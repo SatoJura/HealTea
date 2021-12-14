@@ -5,50 +5,50 @@
     </div>
 
     <div class="card-big-one col-lg-10 d-flex align-items-center">
-    <div>
-      <%= attachment_image_tag @herb, :herb_image, size: "300x200", format: 'jpg' %>
-    </div>
-    <div class="col-lg-8">
-      <table class="table table-borderless">
-        <tbody>
-          <tr>
-            <td class="h3"><%= @herb.herb_name %></td>
-          </tr>
-          <tr>
-            <td class="lead"><%= @herb.caption %><td>
-          </tr>
-          <tr>
-            <td>科名 : <%= @herb.department_name %>科</td>
-          </tr>
-          <tr>
-            <td>効能 : <% @herb.tags.each do |tag| %>
-                <%= tag.tag_name %>
-              <% end %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <!--liked_by? == likesテーブル内にuserが存在する（いいね済み）か否か、、、　if存在したらいいねを取り消す（delete）-->
-              <% if @herb.liked_by?(current_user) %>
-              <p>
-                いいね数：<%= @herb.likes.count %>
-                <%= link_to herb_likes_path(@herb), method: :delete do %>
-                <i class="fas fa-heart like fa-2x"></i>
+      <div>
+        <%= attachment_image_tag @herb, :herb_image, size: "300x200", format: 'jpg' %>
+      </div>
+      <div class="col-lg-8">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td class="h3"><%= @herb.herb_name %></td>
+            </tr>
+            <tr>
+              <td class="lead"><%= @herb.caption %><td>
+            </tr>
+            <tr>
+              <td>科名 : <%= @herb.department_name %>科</td>
+            </tr>
+            <tr>
+              <td>効能 : <% @herb.tags.each do |tag| %>
+                  <%= tag.tag_name %>
                 <% end %>
-              </p>
-              <% else %>
-              <p>
-                いいね数：<%= @herb.likes.count %>
-                <%= link_to herb_likes_path(@herb), method: :post do %>
-                <i class="far fa-heart un-like fa-2x"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!--liked_by? == likesテーブル内にuserが存在する（いいね済み）か否か、、、　if存在したらいいねを取り消す（delete）-->
+                <% if @herb.liked_by?(current_user) %>
+                <p>
+                  いいね数：<%= @herb.likes.count %>
+                  <%= link_to herb_likes_path(@herb), method: :delete do %>
+                  <i class="fas fa-heart like fa-2x"></i>
+                  <% end %>
+                </p>
+                <% else %>
+                <p>
+                  いいね数：<%= @herb.likes.count %>
+                  <%= link_to herb_likes_path(@herb), method: :post do %>
+                  <i class="far fa-heart un-like fa-2x"></i>
+                  <% end %>
+                </p>
                 <% end %>
-              </p>
-              <% end %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
